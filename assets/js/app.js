@@ -12,13 +12,17 @@ import {HashRouter, Switch, Route} from "react-router-dom";
 import '../css/app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import desktopImage from '../../public/image/Background.png';
-import mobileImage from '../../public/image/Background.png';
 import Skills from "./pages/Skills";
 import Realisation from "./pages/Realisation";
 import Formation from "./pages/Formation";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
+import DesktopNavbar from "./components/desktop/DesktopNavbar";
+import MobileNavbar from "./components/mobile/MobileNavbar";
+import DesktopHeader from "./components/desktop/DesktopHeader";
+import MobileHeader from "./components/mobile/MobileHeader";
+
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -26,7 +30,10 @@ import HomePage from "./pages/HomePage";
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    const imageUrl = windowWidth >= 650 ? desktopImage : mobileImage;
+    const Navbar = windowWidth >= 650 ? <DesktopNavbar/> : <MobileNavbar/>;
+    const Header = windowWidth >= 650 ? <DesktopHeader/> : <MobileHeader/>;
+
+    const imageUrl = desktopImage;
 
     const handleWindowResize = () => {
         setWindowWidth(window.innerWidth);
@@ -45,11 +52,15 @@ const App = () => {
             <div style={{
                 backgroundImage: `url(${imageUrl}`,
                 backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
+                backgroundPosition: "top",
                 backgroundSize: "cover",
                 width: "100%",
                 height: "auto"}}>
                 <HashRouter>
+                    <div>
+                        {Header}
+                    </div>
+                    <div>{Navbar}</div>
                     <div className="container pt-5">
                         <Switch>
                             <Route path="/skills" component={Skills}/>

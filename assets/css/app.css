@@ -1,4 +1,31 @@
 
 body {
-
+    font-family: 'Lato', sans-serif;
+}
+.navbar-toggler {
+    color: white;
+    margin-left: 15em!important;
+    display: flex;
+    margin-top: -1em;
+}
+.menu-link {
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    margin-left: 2em;
+}
+.desktop-nav {
+    margin-top: 5em;
+    width: 25em;
+}
+.navbar-nav {
+    text-align: center!important;
+}
+.mobileLogo {
+    margin-top: 0.70em;
+    margin-left: 15px;
+}
+.desktopLogo {
+    margin-top: 2.5em;
+    margin-left: 5em;
 }
