@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavbarToggle from "react-bootstrap/NavbarToggle";
-import Link from "react-router-dom/Link";
+import {Link} from "react-router-dom";
 
 const MobileNavbar = (props) => {
     return (
@@ -10,7 +10,7 @@ const MobileNavbar = (props) => {
             <Navbar className="navbar-dark" collapseOnSelect expand="lg">
                 <NavbarToggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="justify-content-center">
+                    <Nav className="justify-content-center mt-4">
                         <Nav.Item>
                             <Nav.Link className="menu-link" as={Link} to="/" eventKey="/">Qui suis-je ?</Nav.Link>
                         </Nav.Item>
